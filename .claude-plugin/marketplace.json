@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "spineme",
+  "description": "Evidence-based production readiness audits.",
+  "owner": {
+    "name": "gleath05",
+    "url": "https://github.com/gleath05"
+  },
+  "plugins": [
+    {
+      "name": "spineme",
+      "source": "./",
+      "description": "Read-only production readiness audits with vendor-neutral model guidance."
+    }
+  ]
+}

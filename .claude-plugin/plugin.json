@@ -1,0 +1,8 @@
+{
+  "name": "spineme",
+  "version": "0.1.0",
+  "description": "Read-only, evidence-based production readiness audits with vendor-neutral model guidance.",
+  "author": {
+    "name": "gleath05"
+  }
+}

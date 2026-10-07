@@ -1,0 +1,21 @@
+{
+  "name": "spineme",
+  "interface": {
+    "displayName": "SpineMe"
+  },
+  "plugins": [
+    {
+      "name": "spineme",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gleath05/spineme.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

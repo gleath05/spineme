@@ -1,0 +1,4 @@
+interface:
+  display_name: "SpineMe"
+  short_description: "Evidence-based production readiness audits"
+  default_prompt: "Use $spineme to audit this repository for production readiness with compact output."

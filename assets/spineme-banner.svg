@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+<title id="title">SpineMe — Confidence before production. Evidence before confidence.</title>
+<desc id="desc">A mint green spine of connected blocks beside the SpineMe wordmark on a dark background.</desc>
+<rect width="1280" height="400" rx="24" fill="#101a20"/>
+<path d="M113 79V317" stroke="#29434b" stroke-width="8"/>
+<g fill="#86edc3"><rect x="82" y="70" width="62" height="36" rx="10"/><rect x="72" y="121" width="82" height="36" rx="10"/><rect x="62" y="172" width="102" height="36" rx="10"/><rect x="72" y="223" width="82" height="36" rx="10"/><rect x="82" y="274" width="62" height="36" rx="10"/></g>
+<text x="224" y="103" fill="#86edc3" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">PRODUCTION READINESS · EVIDENCE FIRST</text>
+<text x="216" y="213" fill="#f3f8f7" font-family="Arial, sans-serif" font-weight="700" font-size="108" letter-spacing="-5">SpineMe</text>
+<text x="224" y="273" fill="#bbced0" font-family="Arial, sans-serif" font-size="27">Confidence before production. Evidence before confidence.</text>
+<text x="224" y="332" fill="#7e999f" font-family="Arial, sans-serif" font-size="18">READ-ONLY AUDITS   /   ONE PORTABLE SKILL   /   YOUR MODEL</text>
+</svg>
