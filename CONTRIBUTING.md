@@ -11,4 +11,4 @@ stable finding IDs, and vendor-neutral model guidance. Report the host/version,
 model, relevant fixture, and observed result when proposing a compatibility change.
 Never include credentials or private repository content in examples or issues.
 
-Licensing is pending the owner's choice; no open-source license has been assigned.
+SpineMe is licensed under MIT. Preserve the copyright and license notices.

@@ -1,8 +1,10 @@
 {
   "name": "spineme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only, evidence-based production readiness audits with vendor-neutral model guidance.",
   "author": {
     "name": "gleath05"
-  }
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/gleath05/spineme"
 }

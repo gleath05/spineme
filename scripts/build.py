@@ -9,6 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
 
 def archive(name, files):
+    license_bytes = (ROOT / 'LICENSE').read_bytes()
+    for path in list(files):
+        if path.endswith('/SKILL.md'):
+            files[str(PurePosixPath(path).parent / 'LICENSE')] = license_bytes
+    files['spineme/LICENSE' if any(p.startswith('spineme/') for p in files) else 'LICENSE'] = license_bytes
     target = DIST / (name + '.zip')
     with ZipFile(target, 'w') as z:
         for path, data in sorted(files.items()):
@@ -32,7 +37,7 @@ def build():
     for name, file in [('portable', 'plugin.json'), ('claude', '.claude-plugin/plugin.json')]:
         data = (ROOT / file).read_bytes()
         obj = json.loads(data)
-        assert obj['name'] == 'spineme' and obj['version'] == '0.1.0'
+        assert obj['name'] == 'spineme' and obj['version'] == '0.1.1'
         manifests[name] = data
     written = []
     for config in sorted((ROOT / 'adapters').glob('*/adapter.json')):
@@ -44,6 +49,7 @@ def build():
                  'INSTALL.md': (config.parent / 'INSTALL.md').read_bytes()}
         if host == 'codex':
             files[str(rel / 'agents/openai.yaml')] = metadata
+            files[str(rel / 'assets/spineme-icon.svg')] = (ROOT / 'assets/spineme-icon.svg').read_bytes()
         written.append(archive('spineme-' + host + '-adapter', files))
     for host in ('codex', 'cursor', 'claude-code'):
         files = {'spineme/skills/spineme/SKILL.md': core,
@@ -52,8 +58,11 @@ def build():
             files['spineme/.claude-plugin/plugin.json'] = manifests['claude']
         else:
             files['spineme/plugin.json'] = manifests['portable']
+        if host in ('codex', 'cursor'):
+            files['spineme/assets/spineme-icon.svg'] = (ROOT / 'assets/spineme-icon.svg').read_bytes()
         if host == 'codex':
             files['spineme/skills/spineme/agents/openai.yaml'] = metadata
+            files['spineme/skills/spineme/assets/spineme-icon.svg'] = (ROOT / 'assets/spineme-icon.svg').read_bytes()
         written.append(archive('spineme-' + host + '-plugin', files))
     written.append(archive('spineme-chat', {
         'spineme/SKILL.md': core,

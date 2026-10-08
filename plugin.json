@@ -1,9 +1,35 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "spineme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only, evidence-based production readiness audits with vendor-neutral model guidance.",
   "author": {
     "name": "gleath05"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/gleath05/spineme",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SpineMe",
+        "shortDescription": "Confidence before production",
+        "longDescription": "Find evidence-backed production risks across your code, critical flows, and deployment setup. Get prioritized findings, prepare remediation handoffs, and verify fixes. Audits stay read-only, reports start compact, and model advice stays vendor-neutral.",
+        "developerName": "gleath05",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Audit production readiness"
+        ],
+        "websiteURL": "https://github.com/gleath05/spineme",
+        "defaultPrompt": [
+          "Audit this repository for production readiness with compact output",
+          "Review my changes for production blockers and missing verification",
+          "Verify a previous finding against the current code and tests"
+        ],
+        "brandColor": "#86EDC3",
+        "brandColorDark": "#86EDC3",
+        "composerIcon": "./assets/spineme-icon.svg",
+        "logo": "./assets/spineme-icon.svg"
+      }
+    }
   }
 }

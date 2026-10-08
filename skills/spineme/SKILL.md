@@ -1,5 +1,6 @@
 ---
 name: spineme
+license: MIT
 description: >-
   Read-only, evidence-based production readiness audits of software repositories
   or selected changes and domains. Use for release readiness reviews, technical

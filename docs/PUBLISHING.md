@@ -30,6 +30,5 @@ approval is separate from installation using these repository catalogs.
 4. Commit source, generated packages, and validation results together.
 5. Create a release and attach `dist/` ZIPs when ready.
 
-The owner has not yet selected a license. Add a `LICENSE` before advertising this
-as open source or inviting licensed reuse. Cross-host runtime tests and public
+SpineMe uses the MIT license; include `LICENSE` in every distribution. Cross-host runtime tests and public
 marketplace submissions are still pending; do not imply they have passed.

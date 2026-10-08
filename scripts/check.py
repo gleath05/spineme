@@ -43,6 +43,23 @@ def main():
     template = json.loads((ROOT / '.agents/plugins/marketplace.json').read_text())
     assert template['plugins'][0]['source']['source'] == 'url'
     ET.parse(ROOT / 'assets/spineme-banner.svg')
+    ET.parse(ROOT / 'assets/spineme-icon.svg')
+    manifest = json.loads((ROOT / 'plugin.json').read_text())
+    interface = manifest['extensions']['com.openai']['interface']
+    assert interface['displayName'] == 'SpineMe'
+    assert len(interface['defaultPrompt']) == 3
+    for key in ('logo', 'composerIcon'):
+        assert (ROOT / interface[key]).is_file()
+    for archive in DIST.glob('*.zip'):
+        with ZipFile(archive) as z:
+            assert any(n.endswith('LICENSE') for n in z.namelist())
+            for name in z.namelist():
+                if name == 'spineme/plugin.json':
+                    config = json.loads(z.read(name))
+                    for key in ('logo', 'composerIcon'):
+                        asset = config['extensions']['com.openai']['interface'][key]
+                        assert 'spineme/' + (asset[2:] if asset.startswith('./') else asset) in z.namelist()
+
     print('PASS: archive extraction, canonical skill parity, reproducibility, JSON, local links, SVG.')
     print('Not tested: host plugin discovery, audit behavior, marketplace installation, hosted CI.')
 

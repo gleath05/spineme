@@ -46,7 +46,7 @@ It checks archive integrity, safe member paths, manifest basics, and exact core
 content in every package. Generated ZIPs should not be edited manually.
 
 To publish on GitHub, upload this package's contents, including hidden manifest
-folders. Add the chosen license first. Publish the ZIPs as release assets if useful.
+folders. SpineMe is MIT licensed; retain the included license. Publish the ZIPs as release assets if useful.
 Native marketplace submission is a separate step described in the host guides.
 
 ## One skill, different hosts
@@ -200,4 +200,4 @@ other hosts has not yet been performed; portability is not a cross-model quality
 certification. Use the scenarios in [VALIDATION.md](../VALIDATION.md) before claiming
 support for a particular host/version/model combination.
 
-Before publishing, choose a license and add its `LICENSE` file. The repository is `gleath05/spineme`; no license has been assigned yet.
+SpineMe is MIT licensed. The repository is `gleath05/spineme`; retain the included `LICENSE` in distributions.

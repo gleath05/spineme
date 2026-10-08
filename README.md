@@ -177,3 +177,21 @@ remain pending. No benchmark or production-safety guarantee is claimed.
 
 Repository presentation was inspired by [Ponytail](https://github.com/DietrichGebert/ponytail).
 SpineMe has its own audit workflow and does not require Ponytail.
+
+## License and Codex metadata
+
+[MIT](LICENSE) · Copyright © 2026 gleath05.
+
+Codex’s repository catalog lives at [.agents/plugins/marketplace.json](.agents/plugins/marketplace.json).
+The leading dot makes `.agents` hidden in some file browsers (on macOS, press
+Command–Shift–period to show hidden files). Plugin display settings are in
+[`plugin.json`](plugin.json) under `extensions.com.openai.interface`.
+
+After an update, refresh and reinstall the repository plugin:
+
+```bash
+codex plugin marketplace upgrade spineme
+codex plugin add spineme@spineme
+```
+
+Reopen the plugin page or restart the app if it still shows cached metadata.
