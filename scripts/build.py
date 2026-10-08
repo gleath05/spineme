@@ -37,7 +37,7 @@ def build():
     for name, file in [('portable', 'plugin.json'), ('claude', '.claude-plugin/plugin.json')]:
         data = (ROOT / file).read_bytes()
         obj = json.loads(data)
-        assert obj['name'] == 'spineme' and obj['version'] == '0.1.1'
+        assert obj['name'] == 'spineme' and obj['version'] == '0.1.2'
         manifests[name] = data
     written = []
     for config in sorted((ROOT / 'adapters').glob('*/adapter.json')):
@@ -59,6 +59,7 @@ def build():
         else:
             files['spineme/plugin.json'] = manifests['portable']
         if host in ('codex', 'cursor'):
+            files['spineme/.codex-plugin/plugin.json'] = (ROOT / '.codex-plugin/plugin.json').read_bytes()
             files['spineme/assets/spineme-icon.svg'] = (ROOT / 'assets/spineme-icon.svg').read_bytes()
         if host == 'codex':
             files['spineme/skills/spineme/agents/openai.yaml'] = metadata

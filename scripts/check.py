@@ -44,8 +44,8 @@ def main():
     assert template['plugins'][0]['source']['source'] == 'url'
     ET.parse(ROOT / 'assets/spineme-banner.svg')
     ET.parse(ROOT / 'assets/spineme-icon.svg')
-    manifest = json.loads((ROOT / 'plugin.json').read_text())
-    interface = manifest['extensions']['com.openai']['interface']
+    manifest = json.loads((ROOT / '.codex-plugin/plugin.json').read_text())
+    interface = manifest['interface']
     assert interface['displayName'] == 'SpineMe'
     assert len(interface['defaultPrompt']) == 3
     for key in ('logo', 'composerIcon'):
@@ -54,10 +54,10 @@ def main():
         with ZipFile(archive) as z:
             assert any(n.endswith('LICENSE') for n in z.namelist())
             for name in z.namelist():
-                if name == 'spineme/plugin.json':
+                if name == 'spineme/.codex-plugin/plugin.json':
                     config = json.loads(z.read(name))
                     for key in ('logo', 'composerIcon'):
-                        asset = config['extensions']['com.openai']['interface'][key]
+                        asset = config['interface'][key]
                         assert 'spineme/' + (asset[2:] if asset.startswith('./') else asset) in z.namelist()
 
     print('PASS: archive extraction, canonical skill parity, reproducibility, JSON, local links, SVG.')

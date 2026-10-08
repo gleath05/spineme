@@ -185,7 +185,8 @@ SpineMe has its own audit workflow and does not require Ponytail.
 Codex’s repository catalog lives at [.agents/plugins/marketplace.json](.agents/plugins/marketplace.json).
 The leading dot makes `.agents` hidden in some file browsers (on macOS, press
 Command–Shift–period to show hidden files). Plugin display settings are in
-[`plugin.json`](plugin.json) under `extensions.com.openai.interface`.
+[`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) under `interface`,
+using the Codex compatibility layout. The root `plugin.json` keeps portable identity metadata.
 
 After an update, refresh and reinstall the repository plugin:
 
